@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A birthday -12   `    for Bauni — The Gu Gu Queen."
+    />
+    <title>Bauni — The Gu Gu Queen 👑🐣</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <button class="brand" type="button" data-reset aria-label="Restart birthday scrapbook">
+          BAUNI'S DAY <span>✦</span> SCRAPBOOK
+        </button>
+
+        <nav class="scene-nav" aria-label="Birthday scenes">
+          <button class="active" type="button" data-scene-target="welcome" aria-current="step"><span class="nav-number">01</span> Welcome</button>
+          <button type="button" data-scene-target="gugu"><span class="nav-number">02</span> Gu Gu Dept.</button>
+          <button type="button" data-scene-target="report"><span class="nav-number">03</span> Report Card</button>
+          <button type="button" data-scene-target="museum"><span class="nav-number">04</span> Photo Museum</button>
+          <button type="button" data-scene-target="letter"><span class="nav-number">05</span> Birthday Letter</button>
+          <button type="button" data-scene-target="cake"><span class="nav-number">06</span> Cake Finale</button>
+        </nav>
+
+        <div class="music-control">
+          <audio id="scene-audio" preload="none" loop></audio>
+          <button id="music-toggle" type="button" aria-label="Play birthday music" aria-pressed="false">
+            <span id="music-icon" aria-hidden="true">▶</span>
+            <span id="music-label">Music</span>
+          </button>
+          <button id="mute-toggle" class="mute-button" type="button" aria-label="Mute music" aria-pressed="false">
+            <span id="mute-icon" aria-hidden="true">◖))</span>
+          </button>
+          <span id="music-status" class="music-note" role="status">Tap anywhere to start the soundtrack</span>
+        </div>
+      </header>
+
+      <div class="progress-wrap" aria-label="Scene progress">
+        <div class="progress-copy">
+          <span>SCRAPBOOK JOURNEY</span>
+          <span id="progress-count">01 / 06</span>
+        </div>
+        <div class="progress-track"><span id="progress-fill"></span></div>
+      </div>
+
+      <main class="main">
+        <section class="scene hero-scene active" id="scene-welcome" data-scene="welcome" aria-labelledby="welcome-title">
+          <div class="hero-copy">
+            <div class="eyebrow"><span aria-hidden="true">✧</span> A tiny internet surprise · made with love &amp; mild roasting</div>
+            <h1 id="welcome-title">Bauni — The Gu Gu Queen 👑🐣</h1>
+            <p>Happy Birthday, Gunjan! Your very own scrapbook of Gu Gu greatness, light roasting, and one extremely important cake.</p>
+            <button class="button-primary hero-cta" type="button" data-go-scene="gugu">ENTER THE SCRAPBOOK <span aria-hidden="true">→</span></button>
+            <div class="hero-scribble">A whole lot of love<br />with a side of Gu Gu <span>♡</span></div>
+          </div>
+          <div class="hero-art" aria-label="Decorative birthday scrapbook ticket">
+            <span class="sticker sticker-one">OFFICIAL BIRTHDAY GIRL</span>
+            <span class="sticker sticker-two">archive no. 01</span>
+            <div class="birthday-ticket">
+              <div class="ticket-stamp">BIRTHDAY<span>GIRL</span></div>
+              <div class="ticket-title">Gunjan's day</div>
+              <div class="ticket-sub">ONE DAY ONLY · ALL ATTITUDE INCLUDED</div>
+              <div class="ticket-doodle">✿ &nbsp; ✦ &nbsp; ♡</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="scene roast-scene" id="scene-gugu" data-scene="gugu" aria-labelledby="roast-title" hidden>
+          <header class="scene-header">
+            <div class="eyebrow">Department of highly important bakbak</div>
+            <h1 id="roast-title">Gu Gu Department <span>™</span></h1>
+            <p>Officially open. Sadly, there is no off switch.</p>
+          </header>
+          <div class="roast-counter"><span>CASE FILE</span><strong id="roast-count">01</strong><i>/ 06</i></div>
+          <div class="roast-card" id="roast-card">
+            <span class="roast-sticker" id="roast-sticker">BREAKING NEWS</span>
+            <span class="roast-icon" id="roast-icon" aria-hidden="true">📣</span>
+            <p id="roast-copy" aria-live="polite">A highly confidential roast is waiting…</p>
+            <span class="roast-scribble" aria-hidden="true">gu gu!</span>
+          </div>
+          <button class="button-primary" id="next-roast" type="button">REVEAL THE ROAST <span aria-hidden="true">→</span></button>
+          <div class="scene-next">
+            <span>Next up: your very official assessment</span>
+            <button class="text-link" type="button" data-go-scene="report">REPORT CARD <span aria-hidden="true">→</span></button>
+          </div>
+        </section>
+
+        <section class="scene report-scene" id="scene-report" data-scene="report" aria-labelledby="report-title" hidden>
+          <header class="scene-header">
+            <div class="eyebrow">Strictly scientific · absolutely unofficial</div>
+            <h1 id="report-title">Official Report Card</h1>
+            <p>One student. Six subjects. No room for modesty.</p>
+          </header>
+          <div class="report-paper">
+            <div class="report-top"><span>BAUNI ACADEMY</span><span>RESULTS · BIRTHDAY EDITION</span></div>
+            <div class="report-seal">A+<small>IN BEING<br />BAUNI</small></div>
+            <div class="ratings-list" id="ratings-list" aria-live="polite">
+              <div class="rating-row" data-rating="0"><span class="rating-name">Gu Gu Skills</span><span class="rating-dots"></span><strong>— — —</strong></div>
+              <div class="rating-row" data-rating="1"><span class="rating-name">Bakbak</span><span class="rating-dots"></span><strong>— — —</strong></div>
+              <div class="rating-row" data-rating="2"><span class="rating-name">Random Gyaan</span><span class="rating-dots"></span><strong>— — —</strong></div>
+              <div class="rating-row" data-rating="3"><span class="rating-name">Confusion</span><span class="rating-dots"></span><strong>— — —</strong></div>
+              <div class="rating-row" data-rating="4"><span class="rating-name">Cuteness</span><span class="rating-dots"></span><strong>— — —</strong></div>
+              <div class="rating-row" data-rating="5"><span class="rating-name">Pagalpan</span><span class="rating-dots"></span><strong>— — —</strong></div>
+            </div>
+            <div class="report-sign"><span>Signed with affection,</span><strong>The Birthday Committee</strong></div>
+          </div>
+          <button class="button-primary reveal-button" id="reveal-results" type="button">✧ &nbsp; Reveal My Results</button>
+          <div class="scene-next">
+            <span>Next up: a few real-photo exhibits</span>
+            <button class="text-link" type="button" data-go-scene="museum">PHOTO MUSEUM <span aria-hidden="true">→</span></button>
+          </div>
+        </section>
+
+        <section class="scene museum-wrap" id="scene-museum" data-scene="museum" aria-labelledby="museum-title" hidden>
+          <header class="scene-header">
+            <div class="eyebrow">Curated with love · lightly judged</div>
+            <h1 id="museum-title">THE BAUNI PHOTO MUSEUM 📸🎀</h1>
+            <p>Entry free hai, lekin tareef karna compulsory hai. 😭</p>
+          </header>
+          <div class="museum-grid">
+            <button class="photo-card" type="button" data-photo-index="0" aria-label="Open photo 1: MAIN CHARACTER ENERGY">
+              <span class="tape" aria-hidden="true"></span>
+              <span class="photo-window">
+                <img src="gallery/bauni1.jpeg" alt="Bauni photo 1" />
+                <span class="photo-placeholder" hidden><span class="placeholder-icon">PHOTO<br />01</span><small>ADD bauni-1.jpg</small></span>
+              </span>
+              <span class="photo-label"><span>EXHIBIT 01</span><i>✦</i></span>
+              <h2>MAIN CHARACTER ENERGY ✨</h2>
+              <p>Khud ko heroine samajhne ka koi mauka nahi chhodti. 😭💅</p>
+            </button>
+            <button class="photo-card" type="button" data-photo-index="1" aria-label="Open photo 2: YE HARKATEIN NORMAL HAIN KYA">
+              <span class="tape" aria-hidden="true"></span>
+              <span class="photo-window">
+                <img src="gallery/bauni2.jpeg" alt="Bauni photo 2" />
+                <span class="photo-placeholder" hidden><span class="placeholder-icon">PHOTO<br />02</span><small>ADD bauni-2.jpg</small></span>
+              </span>
+              <span class="photo-label"><span>EXHIBIT 02</span><i>✦</i></span>
+              <h2>YE HARKATEIN NORMAL HAIN KYA? 😭</h2>
+              <p>Iske dimaag mein chal kya raha hai, aaj tak research chal rahi hai.</p>
+            </button>
+            <button class="photo-card" type="button" data-photo-index="2" aria-label="Open photo 3: SHARIF DIKHNE KA AWARD">
+              <span class="tape" aria-hidden="true"></span>
+              <span class="photo-window">
+                <img src="gallery/bauni3.jpeg" alt="Bauni photo 3" />
+                <span class="photo-placeholder" hidden><span class="placeholder-icon">PHOTO<br />03</span><small>ADD bauni-3.jpg</small></span>
+              </span>
+              <span class="photo-label"><span>EXHIBIT 03</span><i>✦</i></span>
+              <h2>SHARIF DIKHNE KA AWARD 🏆</h2>
+              <p>Shakal se innocent, harkaton se full investigation material. 😂</p>
+            </button>
+            <button class="photo-card" type="button" data-photo-index="3" aria-label="Open photo 4: OKAY FINE, TODAY IS YOUR DAY">
+              <span class="tape" aria-hidden="true"></span>
+              <span class="photo-window">
+                <img src="gallery/bauni4.jpeg" alt="Bauni photo 4" />
+                <span class="photo-placeholder" hidden><span class="placeholder-icon">PHOTO<br />04</span><small>ADD bauni-4.jpg</small></span>
+              </span>
+              <span class="photo-label"><span>EXHIBIT 04</span><i>✦</i></span>
+              <h2>OKAY FINE, TODAY IS YOUR DAY. 💗</h2>
+              <p>Happy Birthday, Bauni! Aaj thodi si tareef deserve karti hai tu. 🎀</p>
+            </button>
+          </div>
+          <div class="museum-bottom">
+            <div>
+              <strong>ARCHIVE COMPLETE ✅</strong>
+              <p>Four photos dekhi hain, ab attitude paanch guna badh jayega. 😂</p>
+              <p>Photos dekh kar zyada hawa mein mat udd jaana, madam. 💅</p>
+            </div>
+            <button class="button-primary" type="button" data-go-scene="letter">A LITTLE BIRTHDAY NOTE <span aria-hidden="true">→</span></button>
+          </div>
+        </section>
+
+        <section class="scene letter-scene" id="scene-letter" data-scene="letter" aria-labelledby="letter-title" hidden>
+          <header class="scene-header">
+            <div class="eyebrow">The roasting pauses for a moment</div>
+            <h1 id="letter-title">A note for you, Gunjan</h1>
+            <p>Open when you're ready. Keep the envelope forever.</p>
+          </header>
+          <button class="envelope" id="open-letter" type="button" aria-label="Open your birthday letter">
+            <span class="envelope-sticker">FOR BAUNI ♡</span>
+            <span class="envelope-flap"></span>
+            <span class="envelope-seal">♡</span>
+            <span class="envelope-hint">TAP TO OPEN YOUR LETTER</span>
+          </button>
+          <article class="letter-paper" id="letter-paper" aria-label="Birthday letter" hidden>
+            <div class="letter-decoration">✿ &nbsp; ✦ &nbsp; ♡</div>
+            <pre id="letter-copy"></pre>
+            <div class="letter-signoff">with lots of love <span>♡</span></div>
+          </article>
+          <button class="button-secondary letter-close" id="fold-letter" type="button" hidden>FOLD IT BACK UP</button>
+          <div class="scene-next">
+            <span>Okay, feelings over. Cake time.</span>
+            <button class="text-link" type="button" data-go-scene="cake">CAKE FINALE <span aria-hidden="true">→</span></button>
+          </div>
+        </section>
+
+        <section class="scene cake-scene" id="scene-cake" data-scene="cake" aria-labelledby="cake-title" hidden>
+          <header class="scene-header">
+            <div class="eyebrow">Make a wish · guard your slice</div>
+            <h1 id="cake-title">BAUNI'S BIRTHDAY CAKE 🎂🎀</h1>
+          </header>
+          <div class="cake-stage" id="cake-stage">
+            <div class="cake-halo"></div>
+            <span class="cake-spark spark-a" aria-hidden="true">✦</span>
+            <span class="cake-spark spark-b" aria-hidden="true">✧</span>
+            <span class="cake-spark spark-c" aria-hidden="true">✦</span>
+            <div class="cake" id="cake-art" aria-hidden="true">
+              <div class="cake-plate"></div>
+              <div class="cake-layer bottom"></div>
+              <div class="cake-layer top"></div>
+              <div class="cake-slice"></div>
+              <div class="frosting"></div>
+              <span class="strawberry berry-a"></span>
+              <span class="strawberry berry-b"></span>
+              <span class="strawberry berry-c"></span>
+              <span class="cake-bow">🎀</span>
+              <i class="sprinkle sp1"></i><i class="sprinkle sp2"></i><i class="sprinkle sp3"></i><i class="sprinkle sp4"></i><i class="sprinkle sp5"></i>
+              <i class="candle candle-1"></i><i class="candle candle-2"></i><i class="candle candle-3"></i>
+            </div>
+            <div class="knife" aria-hidden="true"></div>
+            <div class="cut-confetti" id="cut-confetti" aria-hidden="true"></div>
+          </div>
+          <div class="cake-copy" id="cake-intro">
+            <strong>CHAL BAUNI, AB CAKE KAAT! 🎂😭</strong>
+            Wish maang lena... par cake mein mera hissa mat bhoolna. 💀
+          </div>
+          <button class="button-primary" id="cut-cake" type="button">KAAT DE CAKEEE 🔪🎂</button>
+          <div class="celebration" id="celebration" role="status" aria-live="polite" hidden>
+            <h2>Happy Birthday, Bauni — The Gu Gu Queen! 👑🎂</h2>
+            <strong>CAKE SUCCESSFULLY CUT! 🎂</strong>
+            <p>Ab photo kheench le, warna saboot kaise milega? 😭😂</p>
+            <button class="button-secondary" id="request-slice" type="button">EK SLICE MERE NAAM KI BHI 😤</button>
+            <div class="slice-reply" id="slice-reply" role="status" hidden>
+              <strong>REQUEST REJECTED ❌</strong><br />
+              Birthday girl ka cake hai, lekin dost ka haq banta hai bhai. 😭
+            </div>
+            <div><button class="button-primary" id="replay-cut" type="button">↻ &nbsp; REPLAY THE CUT</button></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer-note">A small birthday corner for Bauni · photos &amp; music are local files you can drop in</footer>
+
+      <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+        <button type="button" class="lightbox-previous" aria-label="Previous photo">←</button>
+        <div class="lightbox-content">
+          <button class="lightbox-close" type="button" aria-label="Close photo viewer">×</button>
+          <img class="lightbox-image" id="lightbox-image" alt="" />
+          <div class="lightbox-placeholder" id="lightbox-placeholder" hidden></div>
+          <div class="lightbox-caption">
+            <strong id="lightbox-title"></strong>
+            <span id="lightbox-caption"></span>
+          </div>
+          <div class="lightbox-count" id="lightbox-count" aria-live="polite"></div>
+        </div>
+        <button type="button" class="lightbox-next" aria-label="Next photo">→</button>
+      </div>
+      <p class="sr-only" id="scene-announcement" aria-live="polite">Scene 1 of 6: Welcome</p>
+    </div>
+  </body>
+</html>
